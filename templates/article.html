@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{article.title}}</title>
+</head>
+
+<body>
+<h2>{{article.title}}<a href="{{article.scihub}}"></a></h2>
+<h3>{{article.time}}</h3>
+<p>{{article.journal}}</p>
+<p>{{article.volume}}</p>
+<p>{{article.issue}}</p>
+<b>Abstract</b>
+{% if article.text_abstract %}
+    <p>{{article.abstract}}</p>
+{% else %}
+    <img src="{{article.abstract}}" alt="abstract_img:{{article.abstract}}">
+{% endif %}
+{{article.abstract|safe}}
+</body>
+</html>
